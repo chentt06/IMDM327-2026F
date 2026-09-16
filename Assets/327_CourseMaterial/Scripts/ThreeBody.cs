@@ -80,68 +80,23 @@ public class ThreeBody : MonoBehaviour
     {
         // Loop for N-body gravity
         // How should we design the loop?
-        // for (int i = 0; i < numberOfSphere; i++)
-        // {
-        //     // Something
-        //     bp[i].acceleration = Vector3.zero;
-        //     for(int j = 0; j < numberOfSphere; j++)
-        //     {
-        //         if(j!=i)
-        //         {
-        //             //gravity 
-        //             Vector3 distance = bp[i].body.transform.position - bp[j].body.transform.position;
-        //             Vector3 gravity = CalculateGravity(distance, bp[i].mass, bp[j].mass);
-        //             bp[i].acceleration -= gravity / bp[i].mass;
 
-        //         }
-        //         //acceleration ^
-              
-        //     }
-
-        //     //velocity ^
-
-        //     bp[i].velocity += bp[i].acceleration * Time.deltaTime;
-        //     //position ^
-
-        //     bp[i].body.transform.position += bp[i].velocity * Time.deltaTime;
-        // }
-
-        // so old code was kind of redundant, we can make it more effiecient by considering how
-        // for every outer loop, we have already calcuated the gravity for the first sphere
-        // of every inner loop.
-
-        for(int i = 0; i < numberOfSphere; i++){
-            bp[i].acceleration = Vector3.zero;
+        // 00. Initialize the acceleration for each body to zero at the start of each frame
+       for (int i = 0; i < numberOfSphere; i++)
+        {
+            // Something
         }
-
-
-
-        for (int i = 0; i < numberOfSphere; i++){
-
-            for(int j = i + 1; j < numberOfSphere; j++)
-            {
-                Vector3 distance = bp[i].body.transform.position - bp[j].body.transform.position;
-                Vector3 gravity = CalculateGravity(distance, bp[i].mass, bp[j].mass);
-                bp[i].acceleration -= gravity / bp[i].mass;
-                bp[j].acceleration += gravity / bp[j].mass;
-
-                if (distance.magnitude < minimumDistance)
-                {
-                    bp[i].acceleration += 3f * gravity / bp[i].mass * fasterTime;
-                    bp[j].acceleration -= 3f * gravity / bp[j].mass * fasterTime;
-                }
-                
-
-            }
-
-         //velocity ^
-
-             bp[i].velocity += bp[i].acceleration * Time.deltaTime;
-        //position ^
-
-             bp[i].body.transform.position += bp[i].velocity * Time.deltaTime;
+        // 01. Loop through each body to calculate the gravitational forces acting on it
+        for (int i = 0; i < numberOfSphere; i++)
+        {
+            // Something
+            // for ( int j...)
         }
-
+        // 02. Loop through each body to update its velocity and position based on the calculated acceleration
+       for (int i = 0; i < numberOfSphere; i++)
+        {
+            // Something
+        }
     }
 
     // Gravity Fuction to finish
