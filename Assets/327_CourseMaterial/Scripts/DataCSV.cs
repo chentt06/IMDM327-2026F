@@ -67,3 +67,6 @@ public class DataCSV : MonoBehaviour
         }
     }
 }
+
+// use csv when data has same variables
+

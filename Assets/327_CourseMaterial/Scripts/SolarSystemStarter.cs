@@ -1,6 +1,8 @@
 // IMDM327 Material
 // Use CSV or JSON to load data into the simulation. Both formats are supported, but they use different data types. 
 // The CSV format uses a struct, while the JSON format uses a class. This script demonstrates how to load both formats and access their data.
+using System;
+using Unity.Tutorials.Editor;
 using UnityEngine;
 public class SolarSystemStarter : MonoBehaviour
 {
@@ -63,6 +65,15 @@ public class SolarSystemStarter : MonoBehaviour
 
             // What is missing here? You need to set the initial position and velocity of each planet based on the loaded data.
             // ***WRITE YOUR CODE HERE***
+
+            float theta = 2 * Mathf.PI /  numberOfSphere * i;
+            planetProperties[i].planet.transform.position = new Vector3(
+                 Mathf.Cos(theta) + UnityEngine.Random.Range(-10f, 10f),
+                 Mathf.Sin(theta) + UnityEngine.Random.Range(-10f, 10f),
+                 180);
+
+            // the sphere wants to float towards the sun, so by setting a initial velocity towards the other sphere, the two gravitational
+            // forces pull on each other
 
 
         }
